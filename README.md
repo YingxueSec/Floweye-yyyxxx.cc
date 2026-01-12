@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img width="200" height="200" alt="logo" src="https://github.com/user-attachments/assets/27b273f3-61be-49f6-9097-3358db077a3c" />
+# <img width="150" height="150" alt="logo" src="https://github.com/user-attachments/assets/27b273f3-61be-49f6-9097-3358db077a3c" />
 FlowEye
 
 **流量之眼 - 智能被动漏洞扫描平台**
