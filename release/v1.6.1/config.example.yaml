@@ -1,0 +1,68 @@
+server:
+  host: 127.0.0.1
+  port: 55556
+  dev_mode: false
+
+scan:
+  concurrency: 10
+  timeout: 30s
+  rate_limit: 100
+  max_workers: 0
+
+queue:
+  max_size: 10000
+
+filter:
+  domain_whitelist: []
+  domain_blacklist: []
+  status_codes: 200-599
+  enable_dedup: true
+
+storage:
+  database: ./data/floweye.db
+  retention_days: 30
+  auto_cleanup: true
+
+engines:
+  nuclei:
+    enabled: true
+    rules_dir: ./rules/nuclei
+    severity:
+      - critical
+      - high
+      - medium
+      - low
+      - info
+    concurrency: 10
+  dirscan:
+    filter_size: ""
+    include_status: 200-299,301,302,307,401,405,500
+    exclude_status: ""
+    filter_words: ""
+    filter_lines: ""
+    exclude_texts: []
+    exclude_regex: ""
+    exclude_redirect: ""
+    filter_threshold: 10
+    auto_calibrate: true
+
+dnslog:
+  enabled: false
+  provider: ceye
+  domain: ""
+  api_key: ""
+  api_url: ""
+  timeout: 10
+  wait_time: 5
+
+webhook:
+  enabled: false
+  provider: dingtalk
+  webhook_url: ""
+  secret: ""
+  min_severity: high
+
+whitelist:
+  enabled: false
+  hosts: []
+  cidrs: []
